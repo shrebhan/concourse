@@ -1,0 +1,1003 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Concourse is a self-tuning database for ACID transactions and ad-hoc analytics across time.">
+      
+      
+        <link rel="canonical" href="https://concoursedb.com/glossary/">
+      
+      
+        <meta name="author" content="Cinchapi Inc.">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+    
+    
+      
+        <title>Glossary - Concourse Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/highlight.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-72515849-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#glossary" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://concoursedb.com" title="Concourse Guide" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Concourse Guide
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Glossary
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/cinchapi/concourse/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://concoursedb.com" title="Concourse Guide" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.png" width="48" height="48">
+      
+    </a>
+    Concourse Guide
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/cinchapi/concourse/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../data-types/" title="Data Types" class="md-nav__link">
+      Data Types
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../shell/" title="Shell" class="md-nav__link">
+      Shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../writes/" title="Writes" class="md-nav__link">
+      Writes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../reads/" title="Reads" class="md-nav__link">
+      Reads
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../queries/" title="Queries" class="md-nav__link">
+      Queries
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../imports/" title="Imports" class="md-nav__link">
+      Imports
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../transactions/" title="Transactions" class="md-nav__link">
+      Transactions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../time-travel/" title="Time Travel" class="md-nav__link">
+      Time Travel
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../aggregations/" title="Aggregations" class="md-nav__link">
+      Aggregations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../search/" title="Search" class="md-nav__link">
+      Search
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../graph/" title="Graph" class="md-nav__link">
+      Graph
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../administration/" title="Administration" class="md-nav__link">
+      Administration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Plugins
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-18">
+        Plugins
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/usage/" title="Using Plugins" class="md-nav__link">
+      Using Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/development/" title="Developing Plugins" class="md-nav__link">
+      Developing Plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../distributed/" title="Distributed" class="md-nav__link">
+      Distributed
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../internals/" title="Internals" class="md-nav__link">
+      Internals
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+    
+    <label class="md-nav__link" for="nav-21">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-21">
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/authentication/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Glossary
+      </label>
+    
+    <a href="./" title="Glossary" class="md-nav__link md-nav__link--active">
+      Glossary
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#captain" class="md-nav__link">
+    Captain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster" class="md-nav__link">
+    Cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cohort" class="md-nav__link">
+    Cohort
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinator" class="md-nav__link">
+    Coordinator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensemble-protocol" class="md-nav__link">
+    Ensemble Protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gossip-protocol" class="md-nav__link">
+    Gossip Protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leader" class="md-nav__link">
+    Leader
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node" class="md-nav__link">
+    Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimistic-availability" class="md-nav__link">
+    Optimistic Availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partition" class="md-nav__link">
+    Partition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record" class="md-nav__link">
+    Record
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replica" class="md-nav__link">
+    Replica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemaless" class="md-nav__link">
+    Schemaless
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strong-consistency" class="md-nav__link">
+    Strong Consistency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-phase-commit" class="md-nav__link">
+    Three-Phase Commit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value" class="md-nav__link">
+    Value
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#captain" class="md-nav__link">
+    Captain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster" class="md-nav__link">
+    Cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cohort" class="md-nav__link">
+    Cohort
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinator" class="md-nav__link">
+    Coordinator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensemble-protocol" class="md-nav__link">
+    Ensemble Protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gossip-protocol" class="md-nav__link">
+    Gossip Protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leader" class="md-nav__link">
+    Leader
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node" class="md-nav__link">
+    Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimistic-availability" class="md-nav__link">
+    Optimistic Availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partition" class="md-nav__link">
+    Partition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record" class="md-nav__link">
+    Record
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replica" class="md-nav__link">
+    Replica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemaless" class="md-nav__link">
+    Schemaless
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strong-consistency" class="md-nav__link">
+    Strong Consistency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-phase-commit" class="md-nav__link">
+    Three-Phase Commit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value" class="md-nav__link">
+    Value
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/cinchapi/concourse/edit/master/docs/glossary.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">#</a></h1>
+<h2 id="captain">Captain<a class="headerlink" href="#captain" title="Permanent link">#</a></h2>
+<h2 id="cluster">Cluster<a class="headerlink" href="#cluster" title="Permanent link">#</a></h2>
+<p>A group of Concourse <a href="#node">nodes</a> amongst which data is <a href="#partition">partitioned</a> and <a href="#replica">replicated</a>, but together form a single logical database.  </p>
+<h2 id="cohort">Cohort<a class="headerlink" href="#cohort" title="Permanent link">#</a></h2>
+<h2 id="coordinator">Coordinator<a class="headerlink" href="#coordinator" title="Permanent link">#</a></h2>
+<p>The <a href="#node">node</a> to which a client connects to perform an operation. The coordinator is responsible for routing the request to the appropriate node(s) within the <a href="#cluster">cluster</a> and returning the result to the client.</p>
+<p>In Concourse, coordinators are chosen per operation and any node may serve as a coordinator.</p>
+<h2 id="ensemble-protocol">Ensemble Protocol<a class="headerlink" href="#ensemble-protocol" title="Permanent link">#</a></h2>
+<h2 id="gossip-protocol">Gossip Protocol<a class="headerlink" href="#gossip-protocol" title="Permanent link">#</a></h2>
+<h2 id="key">Key<a class="headerlink" href="#key" title="Permanent link">#</a></h2>
+<h2 id="leader">Leader<a class="headerlink" href="#leader" title="Permanent link">#</a></h2>
+<h2 id="node">Node<a class="headerlink" href="#node" title="Permanent link">#</a></h2>
+<p>A Concourse instance that is a member of distributed <a href="#cluster">cluster</a>.</p>
+<h2 id="optimistic-availability">Optimistic Availability<a class="headerlink" href="#optimistic-availability" title="Permanent link">#</a></h2>
+<p>A property of <a href="https://en.wikipedia.org/wiki/Distributed_computing">distributed systems</a> that allows tolerance for arbitrary node failure while preserving <a href="https://en.wikipedia.org/wiki/Availability">availability</a> for an operation as long as the <a href="#coordinator">coordinator</a> and at least one relevant process agree on the state of the system. In laymen&rsquo;s terms: given sufficient <a href="#partition">partitioning</a> and <a href="#replica">replication</a> there is optimism that the system remains available in the face of failure or latency.</p>
+<h2 id="partition">Partition<a class="headerlink" href="#partition" title="Permanent link">#</a></h2>
+<p>A subset of nodes in a distributed <a href="#cluster">cluster</a> that each only contain data certain <a href="#token">token</a> ranges. Data is partitioned within Concourse to better distributed load across the cluster.</p>
+<h2 id="record">Record<a class="headerlink" href="#record" title="Permanent link">#</a></h2>
+<p>A <a href="#schemaless">schemaless</a> group of fields mapping <a href="#key">keys</a> to <a href="#value">values</a>. A single record should map to a single person, place or thing in the real world.</p>
+<h2 id="replica">Replica<a class="headerlink" href="#replica" title="Permanent link">#</a></h2>
+<p>A node</p>
+<h2 id="schemaless">Schemaless<a class="headerlink" href="#schemaless" title="Permanent link">#</a></h2>
+<p>A Concourse feature that allows users to store data without first specifying the data format or data types with the database, and
+2. allows records within the database to contain different formats and data types.</p>
+<h2 id="strong-consistency">Strong Consistency<a class="headerlink" href="#strong-consistency" title="Permanent link">#</a></h2>
+<p>A property of <a href="https://en.wikipedia.org/wiki/Distributed_computing">distributed systems</a> where all processes <em>observe</em> state changes in the same order. According to the <a href="https://en.wikipedia.org/wiki/CAP_theorem">CAP Theorem</a>, distributed database are strongly consistent if every read receives the most recent write or an error, in the event that the most recent write cannot be determined because of network failure or latency.</p>
+<h2 id="three-phase-commit">Three-Phase Commit<a class="headerlink" href="#three-phase-commit" title="Permanent link">#</a></h2>
+<h2 id="token">Token<a class="headerlink" href="#token" title="Permanent link">#</a></h2>
+<h2 id="value">Value<a class="headerlink" href="#value" title="Permanent link">#</a></h2>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../security/authentication/" title="Authentication" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Authentication
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) 2013-2019 Cinchapi Inc.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../javascript/highlight.pack.js"></script>
+      
+        <script src="../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
